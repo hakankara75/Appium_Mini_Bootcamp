@@ -71,6 +71,7 @@ public class Day_01_Locates_CheckBox_HideKeybord_StepDef {
 
     @When("click on ilgi gorenler")
     public void clickOnIlgiGorenler() {
+
         page.ilgiGorenler.get(0).click();
 
 
