@@ -76,7 +76,7 @@ public class Driver {
 
                 case "IOS":
                     iosOptions = new XCUITestOptions();
-                    iosOptions.XCODE_ORG_ID_OPTION.contains("hakan.tetik@......com");
+                    iosOptions.XCODE_ORG_ID_OPTION.contains("xxxx@xxxx.com");
                     iosOptions.setBundleId("com.atoumod")
                             .setDeviceName("iPhone SE")
                             .setPlatformVersion("16.6")
