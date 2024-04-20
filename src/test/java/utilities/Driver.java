@@ -7,6 +7,7 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.Socket;
@@ -23,7 +24,12 @@ public class Driver {
     private static AppiumDriver driver;
 
     public static AndroidDriver getDriver() {
-
+//                    String appUrl=System.getProperty("user.dir")
+//                            + File.separator +"IdeaProjects"
+//                            + File.separator +"apps"
+//                            + File.separator +"resources"
+//                            + File.separator +"app"
+//                            + File.separator +"api.apk";
         if (driver == null) {
             switch (ConfigReader.getProperty("platformName")) {
                 case "Android":
@@ -35,31 +41,24 @@ public class Driver {
 /*
  File.separator: windows ve linux işletim sistemlerindeki farklı slash (/ veya\) farkını ortadan kaldırır
 */
-//                    String appUrl=System.getProperty("user.dir")
-//                            + File.separator +"src"
-//                            + File.separator +"test"
-//                            + File.separator +"resources"
-//                            + File.separator +"app"
-//                            + File.separator +"api.apk";
+
 // setApp() icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
-// .setApp(ConfigReader.getProperty("appUrl")) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
+ .setApp(ConfigReader.getProperty("kitapYurdu")) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
 
-//  .setAppPackage(ConfigReader.getProperty("mapPackage"))
-//  .setAppActivity(ConfigReader.getProperty("mapActivity"))
-
-    //setAppPackage ve setAppActivity bilgilerini almak icin adb shell dumpsys window | find "mCurrentFocus" komutunu cmd ekranina yazariz
 
     //.setUdid() //bu özellik birden fazla cihaz açıkken kullanilacak cihazin tanimidir
 
-//  .setAvd("Pixel7") //ile kapali cihaz test run edilince once acilir sonra test kosulur.
+//  .setAvd("Pixel6") //ile kapali cihaz test run edilince once acilir sonra test kosulur.
 //  .setAvdLaunchTimeout(Duration.ofMinutes(3))
                             /*
                                   .setUdid()  metotu  setDeviceName() yerine is gorur. 1 cihaz teste bagli ise bunu kullanmaya gerek yok.
                                     .setUdid() bilgisini almak icin cihazlar acik iken cmd ekranina adb devices komutu yazilir
                             */
                             .setDeviceName("Pixel6")
-                            .setAppPackage(ConfigReader.getProperty("apiDemosPackage"))
-                            .setAppActivity(ConfigReader.getProperty("apiDemosActivity"))
+//                            .setAppPackage(ConfigReader.getProperty("apiDemosPackage"))
+//                            .setAppActivity(ConfigReader.getProperty("apiDemosActivity"))
+//setAppPackage ve setAppActivity bilgilerini almak icin adb shell dumpsys window | find "mCurrentFocus" komutunu cmd ekranina yazariz
+
                             .setAutomationName("uiautomator2")
                             .setNoReset(true)
                             .setNewCommandTimeout(Duration.ofMinutes(10));

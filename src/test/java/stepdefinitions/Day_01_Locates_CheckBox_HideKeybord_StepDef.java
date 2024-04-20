@@ -65,4 +65,14 @@ public class Day_01_Locates_CheckBox_HideKeybord_StepDef {
     }
 
 
+    @Given("go to kitapyurdu apk")
+    public void goToKitapyurduApk() {
+    }
+
+    @When("click on ilgi gorenler")
+    public void clickOnIlgiGorenler() {
+        page.ilgiGorenler.get(0).click();
+
+
+    }
 }

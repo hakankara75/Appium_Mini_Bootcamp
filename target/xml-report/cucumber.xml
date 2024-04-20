@@ -1,35 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="Cucumber" time="26.844" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Api Demos" name="Api Demos Test" time="26.639">
-<failure type="java.lang.IndexOutOfBoundsException" message="Index 0 out of bounds for length 0">
-<![CDATA[java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
-	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
-	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
-	at java.base/java.util.Objects.checkIndex(Objects.java:359)
-	at java.base/java.util.ArrayList.get(ArrayList.java:427)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at io.appium.java_client.pagefactory.ElementListInterceptor.getObject(ElementListInterceptor.java:40)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfAListOfElements.call(InterceptorOfAListOfElements.java:47)
-	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
-	at net.bytebuddy.renamed.java.util.ArrayList$ByteBuddy$JX2uUt5k.get(Unknown Source)
-	at stepdefinitions.Day_01_Locates_CheckBox_HideKeybord_StepDef.click_on_accessibility_node_querying(Day_01_Locates_CheckBox_HideKeybord_StepDef.java:41)
-	at ✽.click on accessibility node querying(file:///C:/Users/Hakan/IdeaProjects/Appium_Mini_Bootcamp/src/test/resources/features/day_01_Locates_CheckBox_HideKeybord.feature:8)
-]]>
-</failure>
+<testsuite name="Cucumber" time="17.591" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Api Demos" name="kitapyurdu" time="17.251">
 <system-out><![CDATA[
-Given Go to api demos apk...................................................passed
-When click on api demos.....................................................passed
-Then verify api demos text appears..........................................passed
-And click on accessibility..................................................passed
-And click on accessibility node querying....................................failed
-Then verify take out trash checkbox check...................................skipped
-Then verify conquer world checkbox uncheck..................................skipped
-And click conquer world checkbox............................................skipped
-Then verify conquer world checkbox check....................................skipped
+Given go to kitapyurdu apk..................................................passed
+When click on ilgi gorenler.................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

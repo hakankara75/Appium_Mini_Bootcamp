@@ -24,4 +24,6 @@ public class Day_01_Locates_CheckBox_HideKeybord_Page {
     public WebElement conquerWorld;
     @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/tasklist_finished")
     public List<WebElement> checkBoxes;
+    @AndroidFindBy(id = "com.mobisoft.kitapyurdu:id/textViewListTitle")
+    public List<WebElement> ilgiGorenler;
 }

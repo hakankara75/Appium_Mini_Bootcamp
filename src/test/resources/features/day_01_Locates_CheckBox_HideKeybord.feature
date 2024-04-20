@@ -10,3 +10,8 @@ Feature: Api Demos
     Then verify conquer world checkbox uncheck
     And click conquer world checkbox
     Then verify conquer world checkbox check
+
+    @kitapyurdu
+    Scenario: kitapyurdu
+      Given go to kitapyurdu apk
+      When click on ilgi gorenler

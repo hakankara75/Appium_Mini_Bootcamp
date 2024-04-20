@@ -1,15 +1,19 @@
 package test.java.hooks;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import static utilities.Driver.getDriver;
+import static utilities.Driver.isAppiumServerRunning;
 
 
 public class Hooks {
