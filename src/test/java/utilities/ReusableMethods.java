@@ -1,4 +1,4 @@
-package test.java.utilities;
+package utilities;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
@@ -22,6 +22,7 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+
 
 import static utilities.Driver.getDriver;
 
@@ -101,12 +102,12 @@ public class ReusableMethods {
     return AppiumBy.androidUIAutomator("new UiSelector().text(\""+text+"\")");
   }
   public static void tapOnElementWithText(String text) {
-    List<WebElement> mobileElementList = Driver.getDriver().findElements(By.className("android.widget.TextView"));
+    List<WebElement> mobileElementList = getDriver().findElements(By.className("android.widget.TextView"));
     for (WebElement page: mobileElementList) {
       if (page.getText().equalsIgnoreCase(text)){
         page.click();
       }else{
-        scrollWithUiScrollableAndTapOn(Driver.getDriver(),text);
+        scrollWithUiScrollableAndTapOn(getDriver(),text);
       }
       break;
     }
@@ -114,7 +115,7 @@ public class ReusableMethods {
 
   public static boolean isElementPresent(String text) {
     boolean elementFound = false;
-    List<WebElement> mobileElementList = Driver.getDriver().findElements(By.xpath("//android.widget.TextView[@text='" + text + "']"));
+    List<WebElement> mobileElementList = getDriver().findElements(By.xpath("//android.widget.TextView[@text='" + text + "']"));
     for (WebElement el : mobileElementList) {
       if (el.getText().equals(text)) {
         waitToBeVisible(el, Duration.ofSeconds(10));
@@ -169,12 +170,12 @@ public class ReusableMethods {
    * @param timeout ne kadar sure beklenilecegi int olarak verilir
    */
   public static void waitToBeVisible(WebElement element, Duration timeout) {
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+    WebDriverWait wait = new WebDriverWait(getDriver(), timeout);
     wait.until(ExpectedConditions.visibilityOf(element));
   }
 
   public static void waitToBeClickable(WebElement element, Duration timeout) {
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+    WebDriverWait wait = new WebDriverWait(getDriver(), timeout);
     wait.until(ExpectedConditions.elementToBeClickable(element));
   }
 
@@ -192,7 +193,7 @@ public class ReusableMethods {
 
 
   public static void backToPreScreen(){
-    Driver.getDriver().navigate().back();
+    getDriver().navigate().back();
   }
 
 
@@ -204,7 +205,7 @@ public class ReusableMethods {
     String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 
     // TakesScreenshot is an interface of selenium that takes the screenshot
-    TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+    TakesScreenshot ts = (TakesScreenshot) getDriver();
     File source = ts.getScreenshotAs(OutputType.FILE);
 
     // full path to the screenshot location
