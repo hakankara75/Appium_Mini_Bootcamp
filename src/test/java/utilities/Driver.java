@@ -43,7 +43,7 @@ public class Driver {
 */
 
 // setApp() icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
- .setApp(ConfigReader.getProperty("kitapYurdu")) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
+.setApp(ConfigReader.getProperty("n11App")) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
 
 
     //.setUdid() //bu özellik birden fazla cihaz açıkken kullanilacak cihazin tanimidir

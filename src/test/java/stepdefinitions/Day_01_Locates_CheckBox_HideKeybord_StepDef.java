@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -75,5 +76,74 @@ public class Day_01_Locates_CheckBox_HideKeybord_StepDef {
         page.ilgiGorenler.get(0).click();
 
 
+    }
+
+    @Given("go to api demos apk")
+    public void goToApiDemosApk() {
+    }
+
+    @When("click on accessibility link")
+    public void clickOnAccessibilityLink() {
+        page.accessibility.click();
+
+    }
+
+    @Then("assert accesibility page open")
+    public void assertAccesibilityPageOpen() {
+
+        assertTrue(page.nodequerying.isDisplayed());
+
+    }
+
+    @Given("go to n{int} apk")
+    public void goToNApk(int arg0) {
+    }
+
+    @Then("assert n{int} page")
+    public void assertNPage(int arg0) {
+        assertTrue(page.n11MainPage.get(1).isDisplayed());
+    }
+
+    @And("click on n{int} searchbox")
+    public void clickOnNSearchbox(int arg0) {
+        page.searchBox.click();
+
+    }
+
+    @And("send {string} to n{int} searchbox")
+    public void sendToNSearchbox(String arg0, int arg1) {
+        page.searchBox2.sendKeys(arg0);
+    }
+
+    @And("select {string}")
+    public void select(String arg0) {
+    page.erkekKazak.click();
+    }
+
+    @And("click filtrele")
+    public void clickFiltrele() {
+        page.filtrele.click();
+
+    }
+
+    @And("click beden")
+    public void clickBeden() {
+        page.beden.click();
+
+    }
+
+    @When("click M checkbox")
+    public void clickMCheckbox() {
+        page.m.get(2).click();
+        ReusableMethods.wait(2);
+    }
+
+    @Then("assert M checkbox checked")
+    public void assertMCheckboxChecked() {
+        System.out.println("page.m.get(2).isSelected() = " + page.m.get(2).isSelected());
+        String actualCheck=page.m.get(2).getAttribute("checked");
+        System.out.println("page.m.get(2).getAttribute(\"checked\") = " + page.m.get(2).getAttribute("checked"));
+        String expectedCheck="true";
+        assertEquals(expectedCheck,actualCheck);
     }
 }
