@@ -43,7 +43,7 @@ public class Driver {
 */
 
 // setApp() icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
-.setApp(ConfigReader.getProperty("n11App")) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
+//.setApp(ConfigReader.getProperty("n11App")) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
 
 
     //.setUdid() //bu özellik birden fazla cihaz açıkken kullanilacak cihazin tanimidir
@@ -55,8 +55,8 @@ public class Driver {
                                     .setUdid() bilgisini almak icin cihazlar acik iken cmd ekranina adb devices komutu yazilir
                             */
                             .setDeviceName("Pixel6")
-//                            .setAppPackage(ConfigReader.getProperty("apiDemosPackage"))
-//                            .setAppActivity(ConfigReader.getProperty("apiDemosActivity"))
+                            .setAppPackage(ConfigReader.getProperty("blablaPackage"))
+                            .setAppActivity(ConfigReader.getProperty("blablaActivity"))
 //setAppPackage ve setAppActivity bilgilerini almak icin adb shell dumpsys window | find "mCurrentFocus" komutunu cmd ekranina yazariz
 
                             .setAutomationName("uiautomator2")

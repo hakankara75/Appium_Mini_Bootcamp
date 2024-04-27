@@ -5,12 +5,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import pages.Day_01_Locates_CheckBox_HideKeybord_Page;
 import utilities.ReusableMethods;
 
 import java.time.Duration;
 
 import static org.junit.Assert.*;
+import static utilities.Driver.getDriver;
 
 public class Day_01_Locates_CheckBox_HideKeybord_StepDef {
     Day_01_Locates_CheckBox_HideKeybord_Page page=new Day_01_Locates_CheckBox_HideKeybord_Page();
@@ -146,4 +148,6 @@ public class Day_01_Locates_CheckBox_HideKeybord_StepDef {
         String expectedCheck="true";
         assertEquals(expectedCheck,actualCheck);
     }
+
+
 }

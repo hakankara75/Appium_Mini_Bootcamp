@@ -1,16 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="Cucumber" time="22.269" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Api Demos" name="n11" time="21.72">
+<testsuite name="Cucumber" time="15.161" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Toast Message and Hide Keyboard" name="Blabla" time="14.841">
 <system-out><![CDATA[
-Given go to n11 apk.........................................................passed
-Then assert n11 page........................................................passed
-And click on n11 searchbox..................................................passed
-And send "kazak" to n11 searchbox...........................................passed
-And select "erkek kazak"....................................................passed
-And click filtrele..........................................................passed
-And click beden.............................................................passed
-When click M checkbox.......................................................passed
-Then assert M checkbox checked..............................................passed
+Given go to blabla..........................................................passed
+And click on blabla giris yap first.........................................passed
+And click on eposta.........................................................passed
+And send eposta.............................................................passed
+And send parola.............................................................passed
+When click on giris yap.....................................................passed
+Then verify blablas error message...........................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

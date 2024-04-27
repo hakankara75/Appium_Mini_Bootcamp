@@ -47,4 +47,5 @@ public class Day_01_Locates_CheckBox_HideKeybord_Page {
     public WebElement beden;
     @AndroidFindBy(className = "android.widget.CheckBox")
     public List<WebElement>  m;
+
 }
