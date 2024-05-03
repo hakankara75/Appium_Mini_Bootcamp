@@ -24,12 +24,11 @@ public class Driver {
     private static AppiumDriver driver;
 
     public static AndroidDriver getDriver() {
+
 //                    String appUrl=System.getProperty("user.dir")
 //                            + File.separator +"IdeaProjects"
 //                            + File.separator +"apps"
-//                            + File.separator +"resources"
-//                            + File.separator +"app"
-//                            + File.separator +"api.apk";
+//                            + File.separator +"Kitapyurdu.apk";
         if (driver == null) {
             switch (ConfigReader.getProperty("platformName")) {
                 case "Android":
@@ -43,7 +42,7 @@ public class Driver {
 */
 
 // setApp() icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
-//.setApp(ConfigReader.getProperty("n11App")) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
+//.setApp(appUrl) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
 
 
     //.setUdid() //bu özellik birden fazla cihaz açıkken kullanilacak cihazin tanimidir
@@ -55,8 +54,8 @@ public class Driver {
                                     .setUdid() bilgisini almak icin cihazlar acik iken cmd ekranina adb devices komutu yazilir
                             */
                             .setDeviceName("Pixel6")
-                            .setAppPackage(ConfigReader.getProperty("blablaPackage"))
-                            .setAppActivity(ConfigReader.getProperty("blablaActivity"))
+                            .setAppPackage(ConfigReader.getProperty("kitapyurduPackage"))
+                            .setAppActivity(ConfigReader.getProperty("kitapyurduActivity"))
 //setAppPackage ve setAppActivity bilgilerini almak icin adb shell dumpsys window | find "mCurrentFocus" komutunu cmd ekranina yazariz
 
                             .setAutomationName("uiautomator2")

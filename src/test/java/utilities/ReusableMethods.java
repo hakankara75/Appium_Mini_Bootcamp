@@ -29,6 +29,16 @@ import static utilities.Driver.getDriver;
 
 public class ReusableMethods {
 
+  /**
+   * Bu metot ile elemente tek bir click yapılır
+   * @param driver yerine Android driver verilir
+   * @param element yerine tiklanacak elementin locate girilir
+   */
+  public static void clickGesture(AndroidDriver driver, WebElement element){
+    driver.executeScript("mobile: clickGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement) element).getId()
+    ));
+  }
 
   /**
    * Element gorunur olmadigi surece ve sayfa sonuna gelinmedigi surece scroll down yapma metodu
@@ -237,16 +247,6 @@ public class ReusableMethods {
   }
 
 
-  /**
-   * Bu metot ile click yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param element yerine elementin id turunden locate'i verilir
-   */
-  public static void clickGesture(AndroidDriver driver, WebElement element) {
-    driver.executeScript("mobile:clickGesture", ImmutableMap.of(
-            "elementId", ((RemoteWebElement) element).getId()
-    ));
-  }
 
   /**
    * Bu metot ile koordinat vererek click yapilir

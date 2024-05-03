@@ -1,14 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="Cucumber" time="15.161" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Toast Message and Hide Keyboard" name="Blabla" time="14.841">
+<testsuite name="Cucumber" time="27.975" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Gesture" name="click" time="27.625">
 <system-out><![CDATA[
-Given go to blabla..........................................................passed
-And click on blabla giris yap first.........................................passed
-And click on eposta.........................................................passed
-And send eposta.............................................................passed
-And send parola.............................................................passed
-When click on giris yap.....................................................passed
-Then verify blablas error message...........................................passed
+Given go to kitapyurdu apk..................................................passed
+And click on kampanyalar....................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
