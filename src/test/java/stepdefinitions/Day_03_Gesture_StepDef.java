@@ -8,6 +8,8 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import pages.Day_03_Gesture_Page;
 import utilities.ReusableMethods;
 
+import java.io.File;
+
 import static utilities.Driver.getDriver;
 
 public class Day_03_Gesture_StepDef {
@@ -15,6 +17,7 @@ public class Day_03_Gesture_StepDef {
     Day_03_Gesture_Page page=new Day_03_Gesture_Page();
     @And("click on kampanyalar")
     public void clickOnKampanyalar() {
+
         ReusableMethods.clickGesture(getDriver(),page.kampanyalar);
 
 

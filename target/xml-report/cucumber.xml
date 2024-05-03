@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="Cucumber" time="27.975" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Gesture" name="click" time="27.625">
+<testsuite name="Cucumber" time="19.628" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Gesture" name="click" time="19.389">
 <system-out><![CDATA[
 Given go to kitapyurdu apk..................................................passed
 And click on kampanyalar....................................................passed
