@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="Cucumber" time="19.628" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Gesture" name="click" time="19.389">
+<testsuite name="Cucumber" time="15.038" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Gesture" name="double click on photo" time="14.587">
 <system-out><![CDATA[
-Given go to kitapyurdu apk..................................................passed
-And click on kampanyalar....................................................passed
+Given go to photos..........................................................passed
+And click on second photo...................................................passed
+And double click on photo...................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -42,7 +42,7 @@ public class Driver {
 */
 
 // setApp() icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
-.setApp(appUrl) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
+//.setApp(ConfigReader.getProperty("generalStoreApp")) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
 
 
     //.setUdid() //bu özellik birden fazla cihaz açıkken kullanilacak cihazin tanimidir
@@ -54,8 +54,8 @@ public class Driver {
                                     .setUdid() bilgisini almak icin cihazlar acik iken cmd ekranina adb devices komutu yazilir
                             */
                             .setDeviceName("Pixel6")
-//                            .setAppPackage(ConfigReader.getProperty("kitapyurduPackage"))
-//                            .setAppActivity(ConfigReader.getProperty("kitapyurduActivity"))
+                            .setAppPackage(ConfigReader.getProperty("photoPackage"))
+                            .setAppActivity(ConfigReader.getProperty("photoActivity"))
 //setAppPackage ve setAppActivity bilgilerini almak icin adb shell dumpsys window | find "mCurrentFocus" komutunu cmd ekranina yazariz
 
                             .setAutomationName("uiautomator2")
@@ -122,4 +122,13 @@ public class Driver {
         }
     }
 
+
 }
+/*
+        String appUrl=System.getProperty("user.dir")
+                + File.separator +"src"
+                + File.separator +"test"
+                + File.separator +"java"
+                + File.separator +"apps"
+                + File.separator +"Kitapyurdu.apk";
+ */

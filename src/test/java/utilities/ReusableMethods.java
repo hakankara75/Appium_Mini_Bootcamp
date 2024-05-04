@@ -41,6 +41,42 @@ public class ReusableMethods {
   }
 
   /**
+   * bu metot ile bir elemente koordinat vererek tek bir click yapilir
+   * @param driver yerine AndroidDriver verilir
+   * @param x elementin koordinattaki x degerili verilir
+   * @param y elementin koordinattaki y degerili verilir
+   */
+  public static void clickGestureWithCoordinates(AndroidDriver driver, int x, int y){
+    driver.executeScript("mobile: clickGesture", ImmutableMap.of(
+            "x",x,
+            "y",y
+    ));
+  }
+
+  /**
+   * bu metot ile element uzerine double click yapilir
+   * @param driver yerine AndridDriver verilecek
+   * @param element yerine uzerine double click yapilacak elementin locate verilecek
+   */
+  public static void doubleClick(AndroidDriver driver, WebElement element){
+    driver.executeScript("mobile: doubleClickGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement) element).getId()
+    ));
+  }
+
+  /** bu metot ile bir element uzerine koordinat ile double click yapilir
+   * @param driver yerine AndroidDriver verilir
+   * @param x yerine elementin koordinattaki x degeri verilir
+   * @param y yerine elementin koordinattaki y degeri verilir
+   */
+  public static void doubleClickWithCoordinates(AndroidDriver driver, int x, int y){
+    driver.executeScript("mobile: doubleClickGesture", ImmutableMap.of(
+            "x", x,
+            "y",y
+    ));
+  }
+
+  /**
    * Element gorunur olmadigi surece ve sayfa sonuna gelinmedigi surece scroll down yapma metodu
    * @param element yerine android element locati verilmeli
    */
@@ -247,44 +283,6 @@ public class ReusableMethods {
   }
 
 
-
-  /**
-   * Bu metot ile koordinat vererek click yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param x yerine x coordinate verilir
-   * @param y yerine y coordinate verilir
-   */
-    public static void clickGestureWithCoordinates(AndroidDriver driver, int x, int y){
-      driver.executeScript("mobile:clickGesture",ImmutableMap.of(
-              "x", x,
-              "y", y
-      ));
-
-    }
-
-  /**
-   * bu metot ile locate verilen elemente double click yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param element double click yapilacak elementinid turunden locate'i verilecek
-   */
-  public static void doubleClick(AndroidDriver driver, WebElement element){
-      driver.executeScript("mobile: doubleClickGesture", ImmutableMap.of(
-              "elementId", ((RemoteWebElement) element).getId()
-      ));
-    }
-
-  /**
-   * bu metot ile koordinati verilen elemente double click yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param x double click yapilacak elementin x koordinati
-   * @param y double click yapilacak elementin y koordinati
-   */
-  public static void doubleClickWithCoordinates(AndroidDriver driver, int x, int y){
-    driver.executeScript("mobile: doubleClickGesture", ImmutableMap.of(
-            "x", x,
-            "y", y
-    ));
-  }
 
   /**
    * bu metot ile bir elementin ustune long click yapilir

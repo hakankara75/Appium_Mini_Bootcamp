@@ -15,6 +15,12 @@ public class Day_03_Gesture_Page {
     }
     @AndroidFindBy(accessibility = "Kitapyurdu Türkiye Okur Ödülleri 2023 Kazanan Kitaplar Belirlendi")
     public WebElement kampanyalar;
-
-
+    @AndroidFindBy(id = "android:id/text1")
+    public WebElement country;
+    @AndroidFindBy(id = "android:id/text1")
+    public WebElement angola;
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Enter name here\")")
+    public WebElement yourname;
+    @AndroidFindBy(accessibility = "Photo taken on May 3, 2024 2:23:41 PM")
+    public WebElement secondPhoto;
 }
