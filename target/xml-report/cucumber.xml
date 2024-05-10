@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="Cucumber" time="15.038" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Gesture" name="double click on photo" time="14.587">
+<testsuite name="Cucumber" time="18.398" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Long click Dragdrop" name="dragdrop" time="18.022">
 <system-out><![CDATA[
-Given go to photos..........................................................passed
-And click on second photo...................................................passed
-And double click on photo...................................................passed
+Given go to api demos apk...................................................passed
+And click on views..........................................................passed
+And click on drag and drop..................................................passed
+And drag and drop...........................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

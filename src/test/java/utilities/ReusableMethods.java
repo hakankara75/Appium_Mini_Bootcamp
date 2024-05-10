@@ -28,6 +28,60 @@ import static utilities.Driver.getDriver;
 
 
 public class ReusableMethods {
+  /**
+   * Bu metot ile locate verilen element verilen koordinata drag drop yapılır.
+   * @param driver Driver classtaki driver verilir
+   * @param element yerine sürüklenecek elementin locate verilir
+   * @param x yerine elementin bırakılacağı koordinat verilir
+   * @param y yerine elementin bırakılacağı koordinat verilir
+   */
+  public static void dragDrop(AndroidDriver driver,WebElement element,int x, int y ){
+    driver.executeScript("mobile: dragGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement) element).getId(),
+            "endX", x,
+            "endY", y,
+            "speed",500
+    ));
+  }
+
+  /**
+   * Bu metot ile bir element bir koordinat noktasından bir diğerine dragdrop yapılır
+   * @param driver Driver classtaki driver verilir
+   * @param startX yerine sürüklenecek elementin başlangıç koordinatı verilir
+   * @param startY yerine sürüklenecek elementin başlangıç koordinatı verilir
+   * @param x yerine sürüklenecek elementin bitis koordinatı verilir
+   * @param y yerine sürüklenecek elementin bitis koordinatı verilir
+   */
+  public static void dragDropWithCoordinates(AndroidDriver driver,int startX, int startY,int x, int y ){
+    driver.executeScript("mobile: dragGesture", ImmutableMap.of(
+            "startX", startX,
+            "startY", startY,
+            "endX", x,
+            "endY", y,
+            "speed",500
+    ));
+  }
+
+  /**
+   * bu metot ile locate verilen element üzerine long click yapılır
+   * @param driver yerine Driver classtaki driver verilir
+   * @param element yerine locate verilir
+   * @param duration yerine int cinsinden saniye verilir. Element üzerinde kaç saniye bekleneceği bu şekilde belirlenir
+   */
+  public static void longClick(AndroidDriver driver, WebElement element, int duration){
+    driver.executeScript("mobile: longClickGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement) element).getId(),
+            "duration", duration*1000
+    ));
+  }
+
+  public static void longClickWithCoordinates(AndroidDriver driver, int x, int y, int duration){
+    driver.executeScript("mobile: longClickGesture", ImmutableMap.of(
+           "x", x,
+            "y",y,
+            "duration", duration*1000
+    ));
+  }
 
   /**
    * Bu metot ile elemente tek bir click yapılır
@@ -282,73 +336,6 @@ public class ReusableMethods {
     }
   }
 
-
-
-  /**
-   * bu metot ile bir elementin ustune long click yapilir
-  * @param driver yerine AndroidDriver objesi verilir
-  * @param element yerine de elementin id turunden locate'i verilir
-  * @param duration yerine int cinsinden saniye olarak sure koyulur
-   */
-  public static void longClick(AndroidDriver driver, WebElement element, int duration){
-    driver.executeScript("mobile: longClickGesture", ImmutableMap.of(
-            "elementId", ((RemoteWebElement) element).getId(),
-            "duration", duration*1000
-    ));
-  }
-
-  /**
-   * bu metot ile koordinat verilerek bir elemente long click atilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param x yerine elementin x koordinati
-   * @param y yerine de elementin y koordinati verilir
-   * @param duration yerine int cinsinden saniye olarak sure koyulur
-   */
-  public static void longClickWithCoordinates(AndroidDriver driver, int x, int y, int duration){
-    driver.executeScript("mobile: longClickGesture", ImmutableMap.of(
-            "x", x,
-            "y", y,
-            "duration", duration*1000
-    ));
-  }
-
-  /**
-   * bu metot ile drag ve drop islemi yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param element yerine suruklenecek elementin id turunden locate'i verilir
-   * @param endX uzerine suruklenecek elementin x koordinati verilir
-   * @param endY uzerine suruklenecek elementin y koordinati verilir
-   */
-  public static void dragDrop(AndroidDriver driver, WebElement element, int endX, int endY){
-
-    driver.executeScript("mobile: dragGesture", ImmutableMap.of(
-            "elementId", ((RemoteWebElement) element).getId(),
-            "endX", endX,
-            "endY", endY,
-            "speed", 500
-    ));
-
-  }
-
-  /**
-   * bu metot ile drag ve drop islemi koordinat verilerek yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param startX suruklenecek elementin x koordinati verilir
-   * @param startY suruklenecek elementin y koordinati verilir
-   * @param endX uzerine suruklenecek elementin x koordinati verilir
-   * @param endY uzerine suruklenecek elementin y koordinati verilir
-   */
-  public static void dragDropWithCoordinates(AndroidDriver driver, int startX, int startY, int endX, int endY){
-
-    driver.executeScript("mobile: dragGesture", ImmutableMap.of(
-            "startX", startX,
-            "startY", startY,
-            "endX", endX,
-            "endY", endY,
-            "speed", 500
-    ));
-
-  }
 
   /**
    * bu metot ile sayfada asagi dogru scroll yapilir

@@ -54,8 +54,8 @@ public class Driver {
                                     .setUdid() bilgisini almak icin cihazlar acik iken cmd ekranina adb devices komutu yazilir
                             */
                             .setDeviceName("Pixel6")
-                            .setAppPackage(ConfigReader.getProperty("photoPackage"))
-                            .setAppActivity(ConfigReader.getProperty("photoActivity"))
+                            .setAppPackage(ConfigReader.getProperty("apiDemosPackage"))
+                            .setAppActivity(ConfigReader.getProperty("apiDemosActivity"))
 //setAppPackage ve setAppActivity bilgilerini almak icin adb shell dumpsys window | find "mCurrentFocus" komutunu cmd ekranina yazariz
 
                             .setAutomationName("uiautomator2")
