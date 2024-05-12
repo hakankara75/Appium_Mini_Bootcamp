@@ -1,5 +1,6 @@
 ### IntelliJ IDEA ###
 README.md
+src/test/java/apps
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/

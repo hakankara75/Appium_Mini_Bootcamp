@@ -28,6 +28,71 @@ import static utilities.Driver.getDriver;
 
 
 public class ReusableMethods {
+
+
+  /**
+   * bu metot ile sayfanin en altina kadar scroll yapilir
+   * @param driver yerine AndroidDriver objesi verilir
+   * @param x yerine scroll yapilacak olcu verilir. 1.0 tam ekran, 0.50 yarim ekran vb.
+   */
+  public static void scrollToTheDownOfThePage(AndroidDriver driver, WebElement element, double x){
+    boolean canScrollMore=true;
+    while (canScrollMore){
+      canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
+              "elementId", ((RemoteWebElement) element).getId(),
+              "direction", "down",
+              "percent", x,
+              "speed", 1500
+      ));
+    }
+
+  }
+
+  /**
+   * Bu metot ile locate verilen elemente ekran değeri verilerek scroll yapılır.
+   * @param driver Android driver verilir
+   * @param element yerine tam sayfanın locate verilir
+   * @param x yerine ekran boyutu 1.0 veya 0.50 gibi double değerler verilir
+   */
+  public static void scrollDown(AndroidDriver driver, WebElement element, double x){
+    driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement) element).getId(),
+            "direction", "down",
+            "percent", x,
+            "speed", 1500
+    ));
+  }
+
+  /**
+   * bu metot ile sayfada yukari dogru scroll yapilir
+   * @param driver yerine AndroidDriver objesi verilir
+   * @param element yerine ekranın tam olarak secildigi halinin id turunden locate'i verilir
+   * @param x yerine scroll yapilacak olcu verilir. 1.0 tam ekran, 0.50 yarim ekran vb.
+   */
+  public static void scrollUp(AndroidDriver driver, WebElement element, double x){
+    driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement) element).getId(),
+            "direction", "up",
+            "percent", x,
+            "speed", 1500
+    ));
+  }
+
+  /**
+   * Bu metot ile locate verilen elementin boyutunca ve verilen yön doğrultusunda ekran scroll yaptırılır
+   * @param driver  Android driver verilir
+   * @param element yerine scroll yapılacak element locate verilir
+   * @param direction scroll yapılacak yön verilir. left, down gibi
+   */
+  public static void scrollDownElementWithDirection(AndroidDriver driver, WebElement element,String direction){
+    driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement) element).getId(),
+            "direction",direction ,
+            "percent", 1.0,
+            "speed", 500
+    ));
+  }
+
   /**
    * Bu metot ile locate verilen element verilen koordinata drag drop yapılır.
    * @param driver Driver classtaki driver verilir
@@ -337,39 +402,8 @@ public class ReusableMethods {
   }
 
 
-  /**
-   * bu metot ile sayfada asagi dogru scroll yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param element yerine ekranın tam olarak secildigi halinin id turunden locate'i verilir
-   * @param x yerine scroll yapilacak olcu verilir. 1.0 tam ekran, 0.50 yarim ekran vb.
-   */
-  public static void scrollDown(AndroidDriver driver, WebElement element, double x){
 
-    driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
-            "elementId", ((RemoteWebElement) element).getId(),
-            "direction", "down",
-            "percent", x,
-            "speed", 1500
-    ));
-  }
 
-  /**
-   * bu metot ile sayfanin en altina kadar scroll yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param x yerine scroll yapilacak olcu verilir. 1.0 tam ekran, 0.50 yarim ekran vb.
-   */
-  public static void scrollToTheDownOfThePage(AndroidDriver driver, WebElement element, double x){
-
-    boolean canScrollMore =true;
-    while (canScrollMore){
-      canScrollMore= (Boolean) driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
-              "elementId", ((RemoteWebElement) element).getId(),
-              "direction", "down",
-              "percent", x,
-              "speed", 1500
-    ));
-    }
-  }
 
   /**
    * bu metot ile koordinat vererek asagi dogru scroll yapilir
@@ -391,21 +425,6 @@ public class ReusableMethods {
     ));
   }
 
-  /**
-   * bu metot ile sayfada yukari dogru scroll yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param element yerine ekranın tam olarak secildigi halinin id turunden locate'i verilir
-   * @param x yerine scroll yapilacak olcu verilir. 1.0 tam ekran, 0.50 yarim ekran vb.
-   */
-  public static void scrollUp(AndroidDriver driver, WebElement element, double x){
-
-    driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
-            "elementId", ((RemoteWebElement) element).getId(),
-            "direction", "up",
-            "percent", x,
-            "speed", 1500
-    ));
-  }
 
   /**
    * bu metot ile sayfanin en ustune kadar scroll yapilir

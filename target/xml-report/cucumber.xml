@@ -1,11 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="Cucumber" time="18.398" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Long click Dragdrop" name="dragdrop" time="18.022">
+<testsuite name="Cucumber" time="19.007" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="scroll" name="scroll end of the page" time="18.661">
 <system-out><![CDATA[
-Given go to api demos apk...................................................passed
-And click on views..........................................................passed
-And click on drag and drop..................................................passed
-And drag and drop...........................................................passed
+Given go to kitapyurdu apk..................................................passed
+And scroll end of the page..................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
