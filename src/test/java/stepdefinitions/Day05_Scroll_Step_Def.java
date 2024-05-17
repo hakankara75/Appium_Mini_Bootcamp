@@ -26,8 +26,8 @@ public class Day05_Scroll_Step_Def {
     @And("scroll through {int} elements")
     public void scrollThroughElements(int arg0) {
 
-        scrollDown(getDriver(), page.elements.get(0), arg0);
-
+        // scrollDown(getDriver(), page.elements.get(0), arg0);
+        scrollDownElementWithDirection(getDriver(), page.elements.get(0), "down",arg0);
 
 
     }
@@ -59,7 +59,6 @@ public class Day05_Scroll_Step_Def {
 
 
     }
-
 
 
 

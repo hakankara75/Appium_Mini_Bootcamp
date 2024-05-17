@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="Cucumber" time="19.007" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="scroll" name="scroll end of the page" time="18.661">
+<testsuite name="Cucumber" time="12.815" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Scroll" name="scroll to element text" time="12.463">
 <system-out><![CDATA[
-Given go to kitapyurdu apk..................................................passed
-And scroll end of the page..................................................passed
+Given go to main page.......................................................passed
+And click on api demos apk..................................................passed
+And click on views..........................................................passed
+And scroll to rotating button...............................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

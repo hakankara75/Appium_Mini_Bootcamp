@@ -29,6 +29,34 @@ import static utilities.Driver.getDriver;
 
 public class ReusableMethods {
 
+  /**
+   * bu metot ile text degeri verilen elemente kadar sayfa kaydirilir
+   * @param driver yerine AndroidDriver objesi verilir
+   * @param text yerine elementin text degeri verilir
+   */
+  public  static void scrollToElementWithText(AndroidDriver driver,String text){
+    driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+text+"\"))"));
+
+  }
+
+  /**
+   * bu metot ile sayfanin en ustune kadar scroll yapilir
+   * @param driver yerine AndroidDriver objesi verilir
+   *@param element yerine ekranda kaydirilacak olcu olacak element locate verilir
+   * @param x yerine scroll yapilacak olcu verilir. 1.0 tam ekran, 0.50 yarim ekran vb.
+   */
+  public static void scrollToTheTopOfThePage(AndroidDriver driver, WebElement element, double x){
+    boolean canScrollMore=true;
+    while(canScrollMore){
+      canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: flingGesture", ImmutableMap.of(
+              "elementId", ((RemoteWebElement) element).getId(),
+              "direction", "up",
+              "percent",x,
+              "speed", 2000
+      ));
+    }
+  }
+
 
   /**
    * bu metot ile sayfanin en altina kadar scroll yapilir
@@ -84,11 +112,11 @@ public class ReusableMethods {
    * @param element yerine scroll yapılacak element locate verilir
    * @param direction scroll yapılacak yön verilir. left, down gibi
    */
-  public static void scrollDownElementWithDirection(AndroidDriver driver, WebElement element,String direction){
+  public static void scrollDownElementWithDirection(AndroidDriver driver, WebElement element,String direction, double x){
     driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
             "elementId", ((RemoteWebElement) element).getId(),
             "direction",direction ,
-            "percent", 1.0,
+            "percent", x,
             "speed", 500
     ));
   }
@@ -448,23 +476,7 @@ public class ReusableMethods {
     }
   }
 
-  /**
-   * bu metot ile sayfanin en ustune kadar scroll yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param x yerine scroll yapilacak olcu verilir. 1.0 tam ekran, 0.50 yarim ekran vb.
-   */
-  public static void scrollToTheTopOfThePage(AndroidDriver driver, WebElement element, double x){
 
-    boolean canScrollMore =true;
-    while (canScrollMore){
-      canScrollMore= (Boolean) driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
-              "elementId", ((RemoteWebElement) element).getId(),
-              "direction", "up",
-              "percent", x,
-              "speed", 1500
-      ));
-    }
-  }
 
   public static void scrollToElementWithDirection(AndroidDriver driver,WebElement element, String direction){
     driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
@@ -475,15 +487,8 @@ public class ReusableMethods {
     ));
   }
 
-  /**
-   * bu metot ile text degeri verilen elemente kadar sayfa kaydirilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param text yerine elementin text degeri verilir
-   */
-  public static void scrollToElementWithText(AndroidDriver driver, String text){
-    driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+text+"\"))"));
 
-  }
+
 
   /**
    * bu metot ile coordinat verilerek istenen yone (left, rigtht, up, down) kaydirma yapilir
