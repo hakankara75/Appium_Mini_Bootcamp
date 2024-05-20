@@ -12,4 +12,13 @@
     And click on views
     And scroll to rotating button
 
+@scrollCoordinate
+    Scenario: scroll with coorinates
+      Given go to api demos apk
+      And click on views
+      And scroll with coordinates
+
+
+
+
 

@@ -1,11 +1,34 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="Cucumber" time="12.815" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Scroll" name="scroll to element text" time="12.463">
+<testsuite name="Cucumber" time="12.253" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Swipe" name="Swipe" time="11.276">
+<failure type="org.openqa.selenium.NoSuchSessionException" message="The session identified by 146df39f-0dc1-4ccc-9764-7bbadea35937 is not known&#xa;Build info: version: '4.19.1', revision: 'abe0ee07dc'&#xa;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'&#xa;Driver info: io.appium.java_client.android.AndroidDriver&#xa;Command: [ea9150c7-581e-48e0-96b3-146b40527cd7, executeScript {script=mobile: swipeGesture, args=[{top=1333, left=50, width=1000, percent=1.0, speed=500, height=367, direction=left}]}]&#xa;Capabilities {appium:app: C:/Users/Hakan/IdeaProjects..., appium:appPackage: com.mobisoft.kitapyurdu, appium:automationName: uiautomator2, appium:databaseEnabled: false, appium:desired: {app: C:/Users/Hakan/IdeaProjects..., automationName: uiautomator2, deviceName: Pixel6, newCommandTimeout: 600, noReset: true, platformName: ANDROID, unlockKey: 1111, unlockType: pin}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5556, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5556, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 600, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 10, appium:statBarHeight: 63, appium:takesScreenshot: true, appium:unlockKey: 1111, appium:unlockType: pin, appium:viewportRect: {height: 2211, left: 0, top: 63, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}&#xa;Session ID: ea9150c7-581e-48e0-96b3-146b40527cd7">
+<![CDATA[org.openqa.selenium.NoSuchSessionException: The session identified by 146df39f-0dc1-4ccc-9764-7bbadea35937 is not known
+Build info: version: '4.19.1', revision: 'abe0ee07dc'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [ea9150c7-581e-48e0-96b3-146b40527cd7, executeScript {script=mobile: swipeGesture, args=[{top=1333, left=50, width=1000, percent=1.0, speed=500, height=367, direction=left}]}]
+Capabilities {appium:app: C:/Users/Hakan/IdeaProjects..., appium:appPackage: com.mobisoft.kitapyurdu, appium:automationName: uiautomator2, appium:databaseEnabled: false, appium:desired: {app: C:/Users/Hakan/IdeaProjects..., automationName: uiautomator2, deviceName: Pixel6, newCommandTimeout: 600, noReset: true, platformName: ANDROID, unlockKey: 1111, unlockType: pin}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5556, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5556, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 600, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 10, appium:statBarHeight: 63, appium:takesScreenshot: true, appium:unlockKey: 1111, appium:unlockType: pin, appium:viewportRect: {height: 2211, left: 0, top: 63, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: ea9150c7-581e-48e0-96b3-146b40527cd7
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:463)
+	at utilities.ReusableMethods.swipeWithCoordinate(ReusableMethods.java:562)
+	at stepdefinitions.Day_07_Swipe_StepDef.swipeToLeft(Day_07_Swipe_StepDef.java:23)
+	at ✽.swipe to left(file:///C:/Users/Hakan/IdeaProjects/Appium_Mini_Bootcamp/src/test/resources/features/day_07_Swipe.feature:6)
+]]>
+</failure>
 <system-out><![CDATA[
-Given go to main page.......................................................passed
-And click on api demos apk..................................................passed
-And click on views..........................................................passed
-And scroll to rotating button...............................................passed
+Given go to kitapyurdu apk..................................................passed
+And swipe to left...........................................................failed
 ]]></system-out>
 </testcase>
 </testsuite>

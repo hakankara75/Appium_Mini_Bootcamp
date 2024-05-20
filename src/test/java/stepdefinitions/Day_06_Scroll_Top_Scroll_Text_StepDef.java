@@ -3,8 +3,10 @@ package stepdefinitions;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.en.And;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.Day_06_Scroll_Top_Scroll_Text_Page;
+import utilities.ReusableMethods;
 
 import static utilities.Driver.getDriver;
 import static utilities.ReusableMethods.*;
@@ -35,6 +37,19 @@ public class Day_06_Scroll_Top_Scroll_Text_StepDef {
     public void scrollToRotatingButton() {
         String text="Rotating Button";
         scrollToElementWithText(getDriver(),text);
+
+    }
+
+
+    @And("scroll with coordinates")
+    public void scrollWithCoordinates() {
+
+        String direction="down";
+        int percentage=1;
+        int speed=1500;
+
+        ReusableMethods.scrollWithCoordinates(getDriver(),0,461,1050,900,direction,percentage,speed);
+
 
     }
 

@@ -29,6 +29,45 @@ import static utilities.Driver.getDriver;
 
 public class ReusableMethods {
 
+
+  /**
+   * Bu metot ile verilen yön istikametinde ve verilen ölçü büyüklüğünde swipe(kaydırma) yapılır
+   * @param driver yerine Android driver
+   * @param x yerine elementin x değeri
+   * @param y yerine elementin y değeri
+   * @param w yerine elementin width değeri
+   * @param h yerine elementin heigght değeri
+   * @param direction yerine direction
+   * @param percentage yerine double olarak 0 ile 1 arası bir değer
+   */
+  public static void swipeWithCoordinate(AndroidDriver driver, int x, int y, int w, int h, String direction, int percentage, int speed){
+    driver.executeScript("mobile: swipeGesture", ImmutableMap.of(
+            "left", x, "top", y, "width", w, "height", h,
+            "direction", direction,
+            "percent", percentage,
+            "speed", speed
+    ));
+  }
+
+  /**
+   * Bu metot ile koordinatları verilen element büyüklüğünce scroll yapılır
+   * @param driver yerine Android driver
+   * @param left yerine x
+   * @param top top yerine y
+   * @param width width yerine genişlik
+   * @param height yerine yükseklik
+   * @param x yerine kaydırma büyüklüğü. 1,2,3 gibi int değerler olabilir
+   * @param speed yerine hız değeri. 500 veya 1500 gibi olabilir.
+   */
+
+  public static void scrollWithCoordinates(AndroidDriver driver, int left, int top, int width, int height,String direction, int x, int speed){
+    driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
+            "left", left, "top", top, "width", width, "height", height,
+            "direction", direction,
+            "percent", x,
+            "speed", speed
+    ));
+  }
   /**
    * bu metot ile text degeri verilen elemente kadar sayfa kaydirilir
    * @param driver yerine AndroidDriver objesi verilir

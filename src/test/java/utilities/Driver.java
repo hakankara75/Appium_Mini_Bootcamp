@@ -28,21 +28,21 @@ public class Driver {
         String appUrl=System.getProperty("user.home")
                 + File.separator +"IdeaProjects"
                 + File.separator +"apps"
-                + File.separator +"Kitapyurdu.apk";
+                + File.separator +"ApiDemos-debug.apk";
         if (driver == null) {
             switch (ConfigReader.getProperty("platformName")) {
                 case "Android":
                     options = new UiAutomator2Options()
 //                            .withBrowserName("chrome")  //web testleri yaparken bu acik olacak
-//                            .setUnlockType("pin")
-//                            .setUnlockKey("1111")
+                            .setUnlockType("pin")
+                            .setUnlockKey("1111")
 
 /*
  File.separator: windows ve linux işletim sistemlerindeki farklı slash (/ veya\) farkını ortadan kaldırır
 */
 
 // setApp() icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
-//.setApp(ConfigReader.getProperty("kitapYurdu")) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
+.setApp(ConfigReader.getProperty("kitapYurdu")) //icine apk nin bilgisayardaki tam yolu verilir. setAppPackage ve setAppActivity varsa buna gerek yok.
 
 
     //.setUdid() //bu özellik birden fazla cihaz açıkken kullanilacak cihazin tanimidir
@@ -54,8 +54,8 @@ public class Driver {
                                     .setUdid() bilgisini almak icin cihazlar acik iken cmd ekranina adb devices komutu yazilir
                             */
                             .setDeviceName("Pixel6")
-                            .setAppPackage(ConfigReader.getProperty("mainPackage"))
-                            .setAppActivity(ConfigReader.getProperty("mainActivity"))
+//                            .setAppPackage(ConfigReader.getProperty("kitapyurduPackage"))
+//                            .setAppActivity(ConfigReader.getProperty("kitapyurduActivity"))
 //setAppPackage ve setAppActivity bilgilerini almak icin adb shell dumpsys window | find "mCurrentFocus" komutunu cmd ekranina yazariz
 
                             .setAutomationName("uiautomator2")
