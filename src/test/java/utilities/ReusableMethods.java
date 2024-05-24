@@ -29,6 +29,22 @@ import static utilities.Driver.getDriver;
 
 public class ReusableMethods {
 
+  /**
+   * Bu metot ile sayfada hızlı bir şekilde kaydırma / fırlatma yapılır.
+   * Ekran fırlatılarak kaydırılır.
+   * @param driver yerin Android driver verilir
+   * @param element yerine locate verilir
+   * @param direction yerine up, down, left ve right verilir
+   * @param speed yerine int cinsinden değer verilir.
+   */
+  public static void fling(AndroidDriver driver,WebElement element,String direction, int speed){
+    driver.executeScript("mobile: flingGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement) element).getId(),
+            "direction", direction,
+            "speed", speed
+    ));
+  }
+
 
   /**
    * Bu metot ile verilen yön istikametinde ve verilen ölçü büyüklüğünde swipe(kaydırma) yapılır
@@ -530,7 +546,7 @@ public class ReusableMethods {
 
 
   /**
-   * bu metot ile coordinat verilerek istenen yone (left, rigtht, up, down) kaydirma yapilir
+   * bu metot ile yön verilerek istenen tarafa (left, rigtht, up, down) kaydirma yapilir
    * @param driver yerine AndroidDriver objesi verilir
    * @param element yerine elementin locate verilir
    * @param direction yerine (left, rigtht, up, down) yonlerinden birisi text olarak verilir

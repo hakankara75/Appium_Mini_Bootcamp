@@ -15,4 +15,10 @@ public class Day_07_Swipe_Page {
     }
     @AndroidFindBy(id = "android:id/text1")
     public List<WebElement> apiDemos;
+    @AndroidFindBy(id = "com.mobisoft.kitapyurdu:id/recyclerViewList")
+    public List<WebElement> ilgiGorenler;
+    @AndroidFindBy(id = "com.mobisoft.kitapyurdu:id/linearHome")
+    public WebElement kitapYurduMainPage;
+    @AndroidFindBy(id = "com.mobisoft.kitapyurdu:id/imageViewProduct")
+    public List<WebElement> books;
 }
