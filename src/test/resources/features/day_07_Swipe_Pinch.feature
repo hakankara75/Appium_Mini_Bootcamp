@@ -20,5 +20,11 @@
     Scenario: fling to left
       Given go to kitapyurdu apk
       And fling left
+@pinch
+      Scenario: pinch open close
+        Given go to trendyol apk
+        And click on first product
+        And pinch open the image
+        And pinch close the image
 
 

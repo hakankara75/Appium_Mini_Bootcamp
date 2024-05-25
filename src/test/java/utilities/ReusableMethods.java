@@ -28,7 +28,38 @@ import static utilities.Driver.getDriver;
 
 
 public class ReusableMethods {
+  /**
+   * bu metot ile bir element zoom yapilir
+   * @param driver yerine AndroidDriver objesi verilir
+   * @param element yerine zoom yapilacak element locate verilir
+   * @param percent yerine zoom orani girilir. 0 ile 1 arasi bir deger double olarak verilir
+   * @param speed yerine int cinsinden hiz icin deger verilir
+   */
 
+  public static void pinchOpen(AndroidDriver driver, WebElement element, double percent,int speed ){
+
+    driver.executeScript("mobile: pinchOpenGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement) element).getId(),
+            "percent", percent,
+            "speed",speed
+    ));
+  }
+
+  /**
+   * bu metot ile bir element zoomu kapatilir yapilir
+   * @param driver yerine AndroidDriver objesi verilir
+   * @param element yerine zoomu kapatilacak element locate verilir
+   * @param percent yerine zoom out orani girilir. 0 ile 1 arasi bir deger double olarak verilir
+   * @param speed yerine int cinsinden hiz icin deger verilir
+   */
+  public static void pinchClose(AndroidDriver driver, WebElement element, double percent,int speed ){
+
+    driver.executeScript("mobile: pinchCloseGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement) element).getId(),
+            "percent", percent,
+            "speed",speed
+    ));
+  }
   /**
    * Bu metot ile sayfada hızlı bir şekilde kaydırma / fırlatma yapılır.
    * Ekran fırlatılarak kaydırılır.
@@ -615,20 +646,6 @@ public class ReusableMethods {
     ));
   }
 
-  /**
-   * bu metot ile bir element zoom yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param element yerine zoom yapilacak element locate verilir
-   * @param percent yerine zoom orani girilir. 0 ile 1 arasi bir deger double olarak verilir
-   * @param speed yerine int cinsinden hiz icin deger verilir
-   */
-  public static void pinchOpen(AndroidDriver driver, WebElement element, double percent, int speed){
-   driver.executeScript("mobile: pinchOpenGesture", ImmutableMap.of(
-            "elementId", ((RemoteWebElement) element).getId(),
-            "percent", percent,
-           "speed", speed
-    ));
-  }
 
 
   /**
@@ -649,20 +666,7 @@ public class ReusableMethods {
     ));
   }
 
-  /**
-   * bu metot ile bir element zoom yapilir
-   * @param driver yerine AndroidDriver objesi verilir
-   * @param element yerine zoom yapilacak element locate verilir
-   * @param percent yerine zoom orani girilir. 0 ile 1 arasi bir deger double olarak verilir
-   * @param speed yerine int cinsinden hiz icin deger verilir
-   */
-  public static void pinchClose(AndroidDriver driver, WebElement element, double percent, int speed){
-    driver.executeScript("mobile: pinchCloseGesture", ImmutableMap.of(
-            "elementId", ((RemoteWebElement) element).getId(),
-            "percent", percent,
-            "speed", speed
-    ));
-  }
+
 
   /**
    * bu metot ile bir element koordinate verilerek zoom yapilir

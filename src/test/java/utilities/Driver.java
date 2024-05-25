@@ -53,7 +53,7 @@ public class Driver {
                                   .setUdid()  metotu  setDeviceName() yerine is gorur. 1 cihaz teste bagli ise bunu kullanmaya gerek yok.
                                     .setUdid() bilgisini almak icin cihazlar acik iken cmd ekranina adb devices komutu yazilir
                             */
-                            .setDeviceName("Pixel6")
+                            .setDeviceName("Pixel7")
 //                            .setAppPackage(ConfigReader.getProperty("kitapyurduPackage"))
 //                            .setAppActivity(ConfigReader.getProperty("kitapyurduActivity"))
 //setAppPackage ve setAppActivity bilgilerini almak icin adb shell dumpsys window | find "mCurrentFocus" komutunu cmd ekranina yazariz
