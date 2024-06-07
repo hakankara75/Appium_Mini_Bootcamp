@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite name="Cucumber" time="7.499" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="pointer tap" name="pointer" time="7.117">
+<testsuite name="Cucumber" time="16.669" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="pointer tap" name="drag drop" time="16.166">
 <system-out><![CDATA[
-Given go to kitapyurdu apk..................................................passed
-And tap on the second book..................................................passed
+Given go to api demos apk...................................................passed
+And click on views..........................................................passed
+And click on drag and drop..................................................passed
+And drag and drop with pointer..............................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
