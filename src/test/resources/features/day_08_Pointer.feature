@@ -25,3 +25,12 @@ Scenario: drag drop
   And click on views
   And click on drag and drop
   And drag and drop with pointer
+@pointerZoomInZoomOut
+Scenario: zoom in zoom out
+  Given go to files
+  And click on first screen
+  And pointer zoom in
+  And pointer zoom out
+
+
+
