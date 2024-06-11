@@ -42,7 +42,7 @@ public class Day_09_Web_Hybrid_App_StepDef {
         page.textbox.click();
         page.textbox.sendKeys(arg0);
 
-appium --allow-insecure chromedriver_autodownload
+
 
     }
 }
